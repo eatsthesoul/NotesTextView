@@ -157,7 +157,7 @@ public class NotesTextView: UITextView {
 
     func setupTextView() {
         
-        typingAttributes[NSAttributedString.Key.font] = self.attributedText.string.isEmpty ? NotesFontProvider.shared.titleFont : NotesFontProvider.shared.bodyFont
+        typingAttributes[NSAttributedString.Key.font] = NotesFontProvider.shared.bodyFont
         typingAttributes[NSAttributedString.Key.foregroundColor] = UIColor.label
         alwaysBounceVertical = true
         allowsEditingTextAttributes = true

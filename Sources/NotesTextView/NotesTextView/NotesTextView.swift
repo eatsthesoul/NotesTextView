@@ -316,6 +316,11 @@ class MulticastTextViewDelegateProxy: NSObject, UITextViewDelegate {
         externalDelegate?.textViewDidEndEditing?(textView)
     }
     
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        internalDelegate?.textViewDidChangeSelection?(textView)
+        externalDelegate?.textViewDidChangeSelection?(textView)
+    }
+    
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         var internalResult = true
         if let internalDel = internalDelegate, internalDel.responds(to: #selector(UITextViewDelegate.textViewShouldBeginEditing(_:))) {

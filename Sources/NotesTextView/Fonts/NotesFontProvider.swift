@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotesFontProvider {
+public class NotesFontProvider {
     
     @MainActor
     static let shared = NotesFontProvider()

@@ -14,7 +14,10 @@ extension NotesTextView {
             keyboardHeight = keyboardSize.height
 
             if !isSwitchingKeyboard, shouldAdjustInsetBasedOnKeyboardHeight {
-                contentInset = .init(top: 12, left: 0, bottom: keyboardHeight, right: 0)
+                contentInset = .init(top: self.contentInset.top,
+                                     left: self.contentInset.left,
+                                     bottom: keyboardHeight,
+                                     right: self.contentInset.right)
             }
 
         } else {
@@ -25,7 +28,10 @@ extension NotesTextView {
     @objc func keyboardWillHide(notification _: NSNotification) {
         keyboardHeight = 0
         if !isSwitchingKeyboard, shouldAdjustInsetBasedOnKeyboardHeight {
-            contentInset = .init(top: 12, left: 0, bottom: 0, right: 0)
+            contentInset = .init(top: self.contentInset.top,
+                                 left: self.contentInset.left,
+                                 bottom: keyboardHeight,
+                                 right: self.contentInset.right)
         }
     }
 
